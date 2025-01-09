@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "Vanilla Ravioli";
+    font-weight: 400;
+    src: url("./assets/VanillaRavioli.ttf");
+  }
+  @font-face {
+    font-family: "Poppins";
+    font-weight: 400;
+    src: url("./assets/poppins.regular.ttf");
+  }
+}
