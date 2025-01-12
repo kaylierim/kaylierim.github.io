@@ -1,5 +1,5 @@
 function Korea() {
-  return <h1 className="text-green-800">Korea</h1>;
+  return <div>Korea</div>;
 }
 
 export default Korea;
