@@ -13,7 +13,7 @@ function Image({
   caption?: string;
 }) {
   return (
-    <div className={twMerge("relative w-[400px]", className)}>
+    <div className={twMerge("relative", className)}>
       {caption && (
         <Text
           text={caption}

@@ -73,42 +73,54 @@ function Home() {
           </div>
         </div>
       </div>
-      <div className="w-[800px]">
+      <div className="w-[825px] flex flex-col items-center gap-4">
         <Text text="My Co-op in Korea" type="Heading2" />
         <Text text="July-December 2024" type="Paragraph" className="italic" />
-        <Image
-          src={globaleurSign}
-          alt="Kaylie posing with the Globaleur sign"
-          caption="Globaleur sign"
-        />
-        <Text
-          text="I had the wonderful opportunity to have my first co-op in Seoul, South Korea as a front-end engineer at  Globaleur . Globaleur is a company that connects travelers to their destinations for a personalized travel experience. I contributed to Globaleur's white label product by working on tour pages, points of interests pages, and city pages."
-          type="Paragraph"
-        />
-        <Text
-          text="I also worked on individual components such as the navigation bar, footer, and two-step gallery view! I deepened my knowledge in React, Typescript, and Tailwind CSS. The most rewarding experience was brainstorming a product with the team and seeing it come to life through implementation. "
-          type="Paragraph"
-        />
-        <Image
-          src={globaleurManager}
-          alt="Kaylie and her manager posing with the Globaleur sign"
-          caption="My Globaleur manager, Daniel, and I"
-        />
-        <Image
-          src={jejuTeaFields}
-          alt="Kaylie posing in Osulloc Jeju Island tea field"
-          caption="Osulloc Jeju Island tea field"
-        />
-        <Text
-          text="Through this global co-op, I was able to do plenty of traveling and exploring! I traveled to Busan, Japan, and Jeju Island, all of which I recommend taking a trip to (especially Jeju Island).
-Exploring Asia and working with such talented people was an unforgettable experience."
-          type="Paragraph"
-        />
-        <Image
-          src={hallasan}
-          alt="View from the top of Hallasan"
-          caption="View from the top of Hallasan"
-        />
+        <div className="grid grid-cols-2 grid-rows-4 gap-3">
+          <Image
+            src={globaleurSign}
+            alt="Kaylie posing with the Globaleur sign"
+            caption="Globaleur sign"
+            className="float-left"
+          />
+          <Text
+            text="I had the wonderful opportunity to have my first co-op in Seoul, South Korea as a front-end engineer at  Globaleur . Globaleur is a company that connects travelers to their destinations for a personalized travel experience. I contributed to Globaleur's white label product by working on tour pages, points of interests pages, and city pages."
+            type="Paragraph"
+            className="flex items-center"
+          />
+          <Text
+            text="I also worked on individual components such as the navigation bar, footer, and two-step gallery view! I deepened my knowledge in React, Typescript, and Tailwind CSS. The most rewarding experience was brainstorming a product with the team and seeing it come to life through implementation. "
+            type="Paragraph"
+            className="flex items-center"
+          />
+          <Image
+            src={globaleurManager}
+            alt="Kaylie and her manager posing with the Globaleur sign"
+            caption="My Globaleur manager, Daniel, and I"
+            className=""
+          />
+          <Image
+            src={jejuTeaFields}
+            alt="Kaylie posing in Osulloc Jeju Island tea field"
+            caption="Osulloc Jeju Island tea field"
+            className="row-span-2 mt-3"
+          />
+          <div className="flex flex-col gap-4 justify-center">
+            <Text
+              text="Through this global co-op, I was able to do plenty of traveling and exploring! I traveled to Busan, Japan, and Jeju Island, all of which I recommend taking a trip to (especially Jeju Island)."
+              type="Paragraph"
+            />
+            <Text
+              text="Exploring Asia and working with such talented people was an unforgettable experience."
+              type="Paragraph"
+            />
+          </div>
+          <Image
+            src={hallasan}
+            alt="View from the top of Hallasan"
+            caption="View from the top of Hallasan"
+          />
+        </div>
       </div>
       <div>
         <Text text="My Projects" type="Heading2" />
