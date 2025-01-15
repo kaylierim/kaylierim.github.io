@@ -1,7 +1,7 @@
 import reviews from "../../reviews";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import ReviewCard from "../components/ReviewCard";
+import Card from "../components/Card";
 
 function Library() {
   const [bookData, setBookData] = useState<
@@ -78,11 +78,11 @@ function Library() {
 
       {bookData.map((book, index) => {
         return (
-          <ReviewCard
+          <Card
             key={index}
             id={book.olid}
-            title={book.title}
-            author={book.author}
+            header={book.title}
+            subheader={book.author}
             content={book.content}
             img={book.coverUrl}
           />

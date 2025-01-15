@@ -3,6 +3,8 @@ import globaleurSign from "@images/globaleursign.jpg";
 import globaleurManager from "@images/globaleurmanager.jpg";
 import jejuTeaFields from "@images/jejuteafields.jpg";
 import hallasan from "@images/hallasan.jpg";
+import reversiGame from "@images/ReversiGame.png";
+import solitaireGame from "@images/SolitaireGame.png";
 import Text from "@components/Text";
 import EMAIL from "@icons/email.svg";
 import GITHUB from "@icons/github.svg";
@@ -10,6 +12,7 @@ import LINKED_IN from "@icons/linkedin.svg";
 import RESUME from "@icons/resume.svg";
 import MAP_PIN from "@icons/map_pin.svg";
 import Image from "@components/Image";
+import Card from "@components/Card";
 
 function Home() {
   return (
@@ -124,6 +127,24 @@ function Home() {
       </div>
       <div>
         <Text text="My Projects" type="Heading2" />
+        <Card
+          img={reversiGame}
+          header="Reversi Game"
+          subheader="Partner project"
+          content="Developed Java Reversi with score tracking, AI using strategy
+              pattern, Java Swing GUI, and MVC framework following SOLID
+              principles, tested with JUnit."
+          headerFirst={false}
+        />
+        <Card
+          img={solitaireGame}
+          header="Solitaire Game"
+          subheader="Solo project"
+          content="Developed Java Solitaire with three gameplay versions,
+              user-friendly text commands, and adhered to SOLID principles
+              using MVC, tested with JUnit."
+          headerFirst={false}
+        />
       </div>
     </div>
   );
