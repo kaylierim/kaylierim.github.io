@@ -34,9 +34,26 @@ function Home() {
               />
             </div>
             <div className="flex gap-4">
-              <img src={EMAIL} className="w-6" />
-              <img src={GITHUB} className="w-6" />
-              <img src={LINKED_IN} className="w-6" />
+              <a
+                href="mailto:rim.k@northeastern.edu"
+                className="cursor-pointer"
+              >
+                <img src={EMAIL} className="w-6" />
+              </a>
+              <a
+                href="https://github.com/kaylierim"
+                target="_blank"
+                className="cursor-pointer"
+              >
+                <img src={GITHUB} className="w-6" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/kaylie-rim/"
+                target="_blank"
+                className="cursor-pointer"
+              >
+                <img src={LINKED_IN} className="w-6" />
+              </a>
               <img src={RESUME} className="w-6" />
             </div>
           </div>
@@ -52,9 +69,9 @@ function Home() {
             className="w-96"
           />
         </div>
-        <div>
+        <div className="border-solid border-y-0 border-r-0 border-gray-300 border-4 pl-28">
           <Text text="Skills" type="Heading2" />
-          <div className="flex gap-10 font-poppins text-[#2F4156]">
+          <div className="flex gap-10 font-poppins text-xl text-[#2F4156]">
             <ul className="list-disc">
               <li>Typescript</li>
               <li>HTML</li>
@@ -126,7 +143,11 @@ function Home() {
         </div>
       </div>
       <div>
-        <Text text="My Projects" type="Heading2" />
+        <Text
+          text="My Projects"
+          type="Heading2"
+          className="flex justify-center mb-5"
+        />
         <Card
           img={reversiGame}
           header="Reversi Game"
@@ -135,6 +156,7 @@ function Home() {
               pattern, Java Swing GUI, and MVC framework following SOLID
               principles, tested with JUnit."
           headerFirst={false}
+          className="w-[820px] mb-5"
         />
         <Card
           img={solitaireGame}
@@ -144,6 +166,7 @@ function Home() {
               user-friendly text commands, and adhered to SOLID principles
               using MVC, tested with JUnit."
           headerFirst={false}
+          className="w-[820px]"
         />
       </div>
     </div>

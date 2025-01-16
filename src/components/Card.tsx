@@ -2,10 +2,13 @@ import ReactHtmlParser from "html-react-parser";
 import { useState } from "react";
 import x from "@icons/x.svg";
 import Text from "./Text";
+import Image from "./Image";
+import { twMerge } from "tailwind-merge";
 
 function Card({
   img,
   id,
+  className,
   header,
   subheader,
   content,
@@ -13,15 +16,12 @@ function Card({
 }: {
   img: string;
   id?: string;
+  className?: string;
   header?: string;
   subheader?: string;
   content?: string;
   headerFirst?: boolean;
 }) {
-  const truncatedContent =
-    content && content.length > 100
-      ? content.substring(0, 150) + "..."
-      : content;
   const [modalOpen, setModalOpen] = useState(false);
 
   function handleClick() {
@@ -32,36 +32,30 @@ function Card({
     setModalOpen(false);
   }
 
-  // header, subheader, text, icon image use this instead of rigid review card structure
-
   return (
     <>
       <div
-        className="flex items-center relative rounded-[20px] p-2 h-[300px]"
+        className={twMerge(
+          "flex items-center relative rounded-[20px] p-5 h-[300px] bg-white shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ease-in-out",
+          className
+        )}
         id={id}
         onClick={handleClick}
       >
-        <div>
-          <style>{`
-                #${id}::before {
-                    background-image: url(${img});
-                }
-            `}</style>
-          <img src={img} className="h-[260px] rounded-2xl" alt={header} />
-        </div>
+        <img src={img} className="h-[260px] rounded-2xl" alt={header} />
 
-        <div className="review-box-right">
+        <div>
           {headerFirst && (
-            <Text text={header ?? ""} type="Heading2" className="m-5" />
+            <Text text={header ?? ""} type="Heading3" className="m-5" />
           )}
-          <Text text={subheader ?? ""} type="Heading3" className="m-5" />
+          <Text text={subheader ?? ""} type="Heading4" className="m-5" />
           {!headerFirst && (
-            <Text text={header ?? ""} type="Heading2" className="m-5" />
+            <Text text={header ?? ""} type="Heading3" className="m-5" />
           )}
           <Text
-            text={ReactHtmlParser(truncatedContent ?? "")}
+            text={ReactHtmlParser(content ?? "")}
             type="Paragraph"
-            className="m-5"
+            className="m-5 line-clamp-3"
           />
         </div>
       </div>
@@ -78,16 +72,18 @@ function Card({
               alt="close"
               onClick={handleClose}
             />
-            <img
-              className="m-20 rounded-2xl float-right h-[400px]"
+            <Image
               src={img}
-              alt={header}
+              alt={header ?? "Image"}
+              className="m-20 rounded-2xl float-right w-96"
             />
-            <h2 className="modal-title">{header}</h2>
-            <h3 className="modal-author">{subheader}</h3>
-            <div className="modal-content">
-              {ReactHtmlParser(content ?? "")}
-            </div>
+            <Text text={header ?? ""} type="Heading3" className="m-5" />
+            <Text text={subheader ?? ""} type="Heading4" className="m-5" />
+            <Text
+              text={ReactHtmlParser(content ?? "")}
+              type="Paragraph"
+              className="m-5"
+            />
           </div>
         </div>
       )}

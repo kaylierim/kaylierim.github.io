@@ -5,6 +5,7 @@ export const Type = {
   Heading1: "font-vanilla-ravioli text-7xl",
   Heading2: "font-vanilla-ravioli text-6xl",
   Heading3: "font-vanilla-ravioli text-4xl",
+  Heading4: "font-vanilla-ravioli text-2xl",
   Paragraph: "font-poppins text-xl",
 } as const;
 
