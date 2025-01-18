@@ -1,19 +1,20 @@
 import { twMerge } from "tailwind-merge";
+import { Link } from "react-router-dom";
 import Text from "./Text";
 
 function Navbar({ className }: { className?: string }) {
   return (
     <div className={twMerge("flex justify-between mb-28", className)}>
-      <a href="/">
+      <Link to="/">
         <Text text="Kaylie Rim" type="Heading3" />
-      </a>
+      </Link>
       <div className="flex gap-6">
-        <a href="/">
+        <Link to="/">
           <Text text="Home" type="Heading3" />
-        </a>
-        <a href="/library">
+        </Link>
+        <Link to="/library">
           <Text text="Library" type="Heading3" />
-        </a>
+        </Link>
       </div>
     </div>
   );
