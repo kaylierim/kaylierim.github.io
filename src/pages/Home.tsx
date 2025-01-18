@@ -1,10 +1,10 @@
 import profilePhoto from "@images/profilephoto.png";
-import globaleurSign from "@images/globaleursign.jpg";
+import globaleurEngineeringTeam from "@images/globaleurengineeringteam.jpg";
 import globaleurManager from "@images/globaleurmanager.jpg";
-import jejuTeaFields from "@images/jejuteafields.jpg";
 import hallasan from "@images/hallasan.jpg";
 import reversiGame from "@images/ReversiGame.png";
 import solitaireGame from "@images/SolitaireGame.png";
+import resume from "@assets/Kaylie's Resume 2025.pdf";
 import Text from "@components/Text";
 import EMAIL from "@icons/email.svg";
 import GITHUB from "@icons/github.svg";
@@ -17,7 +17,12 @@ import Card from "@components/Card";
 function Home() {
   return (
     <div className="w-full flex flex-col items-center gap-28 mb-28">
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-5">
+        <Image
+          src={profilePhoto}
+          alt="Kaylie's profile photo"
+          className="w-[280px]"
+        />
         <div className="flex flex-col gap-4">
           <Text text="Welcome, I'm Kaylie Rim" type="Heading1" />
           <Text
@@ -33,32 +38,15 @@ function Home() {
                 className="italic"
               />
             </div>
-            <div className="flex gap-4">
-              <a
-                href="mailto:rim.k@northeastern.edu"
-                className="cursor-pointer"
-              >
-                <img src={EMAIL} className="w-6" />
-              </a>
-              <a
-                href="https://github.com/kaylierim"
-                target="_blank"
-                className="cursor-pointer"
-              >
-                <img src={GITHUB} className="w-6" />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/kaylie-rim/"
-                target="_blank"
-                className="cursor-pointer"
-              >
-                <img src={LINKED_IN} className="w-6" />
-              </a>
-              <img src={RESUME} className="w-6" />
-            </div>
+            <a
+              href="mailto:rim.k@northeastern.edu"
+              className="flex gap-3 cursor-pointer"
+            >
+              <img src={EMAIL} className="w-6" />
+              <Text text="rim.k@northeastern.edu" type="Paragraph" />
+            </a>
           </div>
         </div>
-        <img src={profilePhoto} className="w-[280px]" />
       </div>
       <div className="flex gap-20">
         <div>
@@ -69,7 +57,7 @@ function Home() {
             className="w-96"
           />
         </div>
-        <div className="border-solid border-y-0 border-r-0 border-gray-300 border-4 pl-28">
+        <div className="border-solid border-y-0 border-r-0 border-gray-300 border-4 pl-20">
           <Text text="Skills" type="Heading2" />
           <div className="flex gap-10 font-poppins text-xl text-[#2F4156]">
             <ul className="list-disc">
@@ -92,17 +80,40 @@ function Home() {
             </ul>
           </div>
         </div>
+        <div className="border-solid border-y-0 border-r-0 border-gray-300 border-4 pl-20">
+          <Text text="Links" type="Heading2" className="mb-4" />
+          <div className="flex flex-col gap-5">
+            <a
+              href="https://github.com/kaylierim"
+              target="_blank"
+              className="flex gap-3 cursor-pointer"
+            >
+              <img src={GITHUB} className="w-6" />
+              <Text text="GitHub" type="Paragraph" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/kaylie-rim/"
+              target="_blank"
+              className="flex gap-3 cursor-pointer"
+            >
+              <img src={LINKED_IN} className="w-6" />
+              <Text text="LinkedIn" type="Paragraph" />
+            </a>
+            <a
+              href={resume}
+              target="_blank"
+              className="flex gap-3 cursor-pointer"
+            >
+              <img src={RESUME} className="w-6" />
+              <Text text="Resume" type="Paragraph" />
+            </a>
+          </div>
+        </div>
       </div>
-      <div className="w-[825px] flex flex-col items-center gap-4">
+      <div className="flex flex-col gap-4 w-[1200px]">
         <Text text="My Co-op in Korea" type="Heading2" />
         <Text text="July-December 2024" type="Paragraph" className="italic" />
-        <div className="grid grid-cols-2 grid-rows-4 gap-3">
-          <Image
-            src={globaleurSign}
-            alt="Kaylie posing with the Globaleur sign"
-            caption="Globaleur sign"
-            className="float-left"
-          />
+        <div className="grid grid-cols-3 grid-rows-2 gap-3">
           <Text
             text="I had the wonderful opportunity to have my first co-op in Seoul, South Korea as a front-end engineer at  Globaleur . Globaleur is a company that connects travelers to their destinations for a personalized travel experience. I contributed to Globaleur's white label product by working on tour pages, points of interests pages, and city pages."
             type="Paragraph"
@@ -112,18 +123,6 @@ function Home() {
             text="I also worked on individual components such as the navigation bar, footer, and two-step gallery view! I deepened my knowledge in React, Typescript, and Tailwind CSS. The most rewarding experience was brainstorming a product with the team and seeing it come to life through implementation. "
             type="Paragraph"
             className="flex items-center"
-          />
-          <Image
-            src={globaleurManager}
-            alt="Kaylie and her manager posing with the Globaleur sign"
-            caption="My Globaleur manager, Daniel, and I"
-            className=""
-          />
-          <Image
-            src={jejuTeaFields}
-            alt="Kaylie posing in Osulloc Jeju Island tea field"
-            caption="Osulloc Jeju Island tea field"
-            className="row-span-2 mt-3"
           />
           <div className="flex flex-col gap-4 justify-center">
             <Text
@@ -136,6 +135,18 @@ function Home() {
             />
           </div>
           <Image
+            src={globaleurEngineeringTeam}
+            alt="Kaylie and the Gloableur Engineering Team"
+            caption="Globaleur Engineering Team"
+            className="float-left"
+          />
+          <Image
+            src={globaleurManager}
+            alt="Kaylie and her manager"
+            caption="Daniel (my manager) and I"
+            className=""
+          />
+          <Image
             src={hallasan}
             alt="View from the top of Hallasan"
             caption="View from the top of Hallasan"
@@ -143,11 +154,7 @@ function Home() {
         </div>
       </div>
       <div>
-        <Text
-          text="My Projects"
-          type="Heading2"
-          className="flex justify-center mb-5"
-        />
+        <Text text="My Projects" type="Heading2" className="flex mb-5" />
         <Card
           img={reversiGame}
           header="Reversi Game"
@@ -156,7 +163,7 @@ function Home() {
               pattern, Java Swing GUI, and MVC framework following SOLID
               principles, tested with JUnit."
           headerFirst={false}
-          className="w-[820px] mb-5"
+          className="w-[1200px] mb-5"
         />
         <Card
           img={solitaireGame}
@@ -166,9 +173,13 @@ function Home() {
               user-friendly text commands, and adhered to SOLID principles
               using MVC, tested with JUnit."
           headerFirst={false}
-          className="w-[820px]"
+          className="w-[1200px]"
         />
       </div>
+      <Text
+        text="**Currently making the website responsive!!**"
+        type="Paragraph"
+      />
     </div>
   );
 }

@@ -75,7 +75,7 @@ function Card({
             <Image
               src={img}
               alt={header ?? "Image"}
-              className="m-20 rounded-2xl float-right w-96"
+              className="ml-20 mb-20 rounded-2xl float-right w-96"
             />
             <Text text={header ?? ""} type="Heading3" className="m-5" />
             <Text text={subheader ?? ""} type="Heading4" className="m-5" />

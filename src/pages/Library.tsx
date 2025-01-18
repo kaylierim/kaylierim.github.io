@@ -60,13 +60,13 @@ function Library() {
   }, []);
 
   return (
-    <div className="px-28">
+    <div className="px-28 mb-28">
       <Text
         text="⋆｡°✩ Kaylie's Library ⋆｡°✩"
         type="Heading1"
         className="flex justify-center"
       />
-      <div className="flex justify-center p-4">
+      <div className="flex justify-center p-4 gap-5 px-32">
         <Text
           text="I have been an avid reader since junior year of high school. In 2023,
           I read 50 books and this year, my goal is 40 books. I read nonfiction,
@@ -96,11 +96,6 @@ function Library() {
           );
         })}
       </div>
-
-      {/*
-      <img src={Books} id="books" />
-      <img src={Candle} id="candle" />
-      <img src={Cup} id="cup" /> */}
     </div>
   );
 }
