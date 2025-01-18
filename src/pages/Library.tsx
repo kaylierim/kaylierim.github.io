@@ -27,8 +27,14 @@ function Library() {
 
           const bookInfo = response.data;
           const title = bookInfo.title;
-          const authorName = bookInfo.authors?.[0]?.name;
-
+          const authorKey = bookInfo.authors?.[0]?.key;
+          let authorName = "Unknown Author";
+          if (authorKey) {
+            const authorResponse = await axios.get(
+              `https://openlibrary.org${authorKey}.json`
+            );
+            authorName = authorResponse.data.name;
+          }
           return {
             title,
             author: authorName,
