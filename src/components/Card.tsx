@@ -52,11 +52,10 @@ function Card({
           {!headerFirst && (
             <Text text={header ?? ""} type="Heading3" className="m-5" />
           )}
-          <Text
-            text={ReactHtmlParser(content ?? "")}
-            type="Paragraph"
-            className="m-5 line-clamp-3"
-          />
+
+          <div className="m-5 line-clamp-3 font-poppins text-xl text-[#2F4156]">
+            {ReactHtmlParser(content ?? "")}
+          </div>
         </div>
       </div>
 
@@ -79,11 +78,9 @@ function Card({
             />
             <Text text={header ?? ""} type="Heading3" className="m-5" />
             <Text text={subheader ?? ""} type="Heading4" className="m-5" />
-            <Text
-              text={ReactHtmlParser(content ?? "")}
-              type="Paragraph"
-              className="m-5"
-            />
+            <div className="m-5 font-poppins text-xl text-[#2F4156]">
+              {ReactHtmlParser(content ?? "")}
+            </div>
           </div>
         </div>
       )}
