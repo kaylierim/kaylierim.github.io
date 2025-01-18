@@ -6,6 +6,7 @@ export default defineConfig({
   assetsInclude: ['**/*.JPG'],
   plugins: [react()],
   resolve: {
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
     alias: {
       "@assets": "/src/assets",
       "@components": "/src/components",
