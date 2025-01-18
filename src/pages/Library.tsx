@@ -22,19 +22,12 @@ function Library() {
           const olid = review.olid;
           const content = review.content;
           const response = await axios.get(
-            `https://openlibrary.org/works/${olid}.json`
+            `https://openlibrary.org/books/${olid}.json`
           );
 
           const bookInfo = response.data;
           const title = bookInfo.title;
-          const authorKey = bookInfo.authors?.[0]?.key;
-          let authorName = "Unknown Author";
-          if (authorKey) {
-            const authorResponse = await axios.get(
-              `https://openlibrary.org${authorKey}.json`
-            );
-            authorName = authorResponse.data.name;
-          }
+          const authorName = bookInfo.authors?.[0]?.name;
 
           return {
             title,
