@@ -57,7 +57,7 @@ function Home() {
             className="w-96"
           />
         </div>
-        <div className="flex">
+        <div className="flex gap-20 mobile:gap-0">
           <div className="border-solid border-y-0 border-r-0 border-gray-300 border-4 pl-20 mobile:border-none mobile:pl-0">
             <Text text="Skills" type="Heading2" />
             <div className="flex gap-10 font-poppins text-md text-navy">
