@@ -21,7 +21,7 @@ function Home() {
         <Image
           src={profilePhoto}
           alt="Kaylie's profile photo"
-          className="w-[280px]"
+          className="w-[280px] mobile:w-[200px]"
         />
         <div className="flex flex-col gap-4">
           <Text text="Welcome, I'm Kaylie Rim" type="Heading1" />
@@ -29,7 +29,7 @@ function Home() {
             text="I am a computer science student at Northeastern University. Nice to meet you!"
             type="Paragraph"
           />
-          <div className="flex justify-between">
+          <div className="flex justify-between mobile:flex-col mobile:gap-3">
             <div className="flex">
               <img src={MAP_PIN} className="w-6" />
               <Text
@@ -48,7 +48,7 @@ function Home() {
           </div>
         </div>
       </div>
-      <div className="flex gap-20">
+      <div className="flex gap-20 mobile:flex-col">
         <div>
           <Text text="About Me" type="Heading2" />
           <Text
@@ -57,63 +57,65 @@ function Home() {
             className="w-96"
           />
         </div>
-        <div className="border-solid border-y-0 border-r-0 border-gray-300 border-4 pl-20">
-          <Text text="Skills" type="Heading2" />
-          <div className="flex gap-10 font-poppins text-md text-[#2F4156]">
-            <ul className="list-disc">
-              <li>Typescript</li>
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>JavaScript</li>
-              <li>Python</li>
-              <li>Java</li>
-              <li>Kotlin</li>
-            </ul>
-            <ul className="list-disc">
-              <li>Jira</li>
-              <li>Git/Github</li>
-              <li>Confluence</li>
-              <li>Figma</li>
-              <li>React</li>
-              <li>Tailwind CSS</li>
-              <li>ESLint</li>
-            </ul>
+        <div className="flex">
+          <div className="border-solid border-y-0 border-r-0 border-gray-300 border-4 pl-20 mobile:border-none mobile:pl-0">
+            <Text text="Skills" type="Heading2" />
+            <div className="flex gap-10 font-poppins text-md text-navy">
+              <ul className="list-disc">
+                <li>Typescript</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>Python</li>
+                <li>Java</li>
+                <li>Kotlin</li>
+              </ul>
+              <ul className="list-disc">
+                <li>Jira</li>
+                <li>Git/Github</li>
+                <li>Confluence</li>
+                <li>Figma</li>
+                <li>React</li>
+                <li>Tailwind CSS</li>
+                <li>ESLint</li>
+              </ul>
+            </div>
           </div>
-        </div>
-        <div className="border-solid border-y-0 border-r-0 border-gray-300 border-4 pl-20">
-          <Text text="Links" type="Heading2" className="mb-4" />
-          <div className="flex flex-col gap-5">
-            <a
-              href="https://github.com/kaylierim"
-              target="_blank"
-              className="flex gap-3 cursor-pointer"
-            >
-              <img src={GITHUB} className="w-6" />
-              <Text text="GitHub" type="Paragraph" />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/kaylie-rim/"
-              target="_blank"
-              className="flex gap-3 cursor-pointer"
-            >
-              <img src={LINKED_IN} className="w-6" />
-              <Text text="LinkedIn" type="Paragraph" />
-            </a>
-            <a
-              href={resume}
-              target="_blank"
-              className="flex gap-3 cursor-pointer"
-            >
-              <img src={RESUME} className="w-6" />
-              <Text text="Resume" type="Paragraph" />
-            </a>
+          <div className="border-solid border-y-0 border-r-0 border-gray-300 border-4 pl-20 mobile:border-none mobile:pl-14">
+            <Text text="Links" type="Heading2" className="mb-4" />
+            <div className="flex flex-col gap-5">
+              <a
+                href="https://github.com/kaylierim"
+                target="_blank"
+                className="flex gap-3 cursor-pointer"
+              >
+                <img src={GITHUB} className="w-6" />
+                <Text text="GitHub" type="Paragraph" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/kaylie-rim/"
+                target="_blank"
+                className="flex gap-3 cursor-pointer"
+              >
+                <img src={LINKED_IN} className="w-6" />
+                <Text text="LinkedIn" type="Paragraph" />
+              </a>
+              <a
+                href={resume}
+                target="_blank"
+                className="flex gap-3 cursor-pointer"
+              >
+                <img src={RESUME} className="w-6" />
+                <Text text="Resume" type="Paragraph" />
+              </a>
+            </div>
           </div>
         </div>
       </div>
-      <div className="flex flex-col gap-4 w-[1200px]">
+      <div className="flex flex-col gap-4 w-[1200px] mobile:w-full mobile:px-4">
         <Text text="My Co-op in Korea" type="Heading2" />
         <Text text="July-December 2024" type="Paragraph" className="italic" />
-        <div className="grid grid-cols-3 grid-rows-2 gap-3">
+        <div className="grid grid-cols-3 grid-rows-2 gap-3 mobile:flex mobile:flex-col">
           <Text
             text="I had the wonderful opportunity to have my first co-op in Seoul, South Korea as a front-end engineer at  Globaleur . Globaleur is a company that connects travelers to their destinations for a personalized travel experience. I contributed to Globaleur's white label product by working on tour pages, points of interests pages, and city pages."
             type="Paragraph"
@@ -153,7 +155,7 @@ function Home() {
           />
         </div>
       </div>
-      <div>
+      <div className="mobile:px-4">
         <Text text="My Projects" type="Heading2" className="flex mb-5" />
         <Card
           img={reversiGame}
@@ -163,7 +165,7 @@ function Home() {
               pattern, Java Swing GUI, and MVC framework following SOLID
               principles, tested with JUnit."
           headerFirst={false}
-          className="w-[1000px] mb-5 h-[250px]"
+          className="w-[1000px] mb-5 h-[250px] mobile:w-full"
         />
         <Card
           img={solitaireGame}
@@ -173,7 +175,7 @@ function Home() {
               user-friendly text commands, and adhered to SOLID principles
               using MVC, tested with JUnit."
           headerFirst={false}
-          className="w-[1000px] h-[250px]"
+          className="w-[1000px] h-[250px] mobile:w-full"
         />
       </div>
       <Text

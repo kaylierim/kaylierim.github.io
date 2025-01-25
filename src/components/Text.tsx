@@ -19,9 +19,7 @@ function Text({
   className?: string;
 }) {
   return (
-    <div className={twMerge("text-[#2F4156]", Type[type], className)}>
-      {text}
-    </div>
+    <div className={twMerge("text-navy", Type[type], className)}>{text}</div>
   );
 }
 

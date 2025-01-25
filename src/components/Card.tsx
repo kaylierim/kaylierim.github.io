@@ -53,7 +53,7 @@ function Card({
             <Text text={header ?? ""} type="Heading3" className="m-5" />
           )}
 
-          <div className="m-5 line-clamp-3 font-poppins text-md text-[#2F4156]">
+          <div className="m-5 line-clamp-3 font-poppins text-md text-navy">
             {ReactHtmlParser(content ?? "")}
           </div>
         </div>
@@ -62,9 +62,12 @@ function Card({
       {modalOpen && (
         <div
           className="fixed left-0 top-0 w-full h-full flex items-center justify-center bg-black/25 z-10"
-          onClick={() => handleClose()}
+          onClick={handleClose}
         >
-          <div className="bg-white max-w-[70%] max-h-[80%] p-8 rounded-[20px] z-20 overflow-auto">
+          <div
+            className="bg-white max-w-[70%] max-h-[80%] p-8 rounded-[20px] z-20 overflow-auto mobile:p-4"
+            onClick={(e) => e.stopPropagation()}
+          >
             <img
               src={x}
               className="h-4 cursor-pointer"
@@ -74,11 +77,11 @@ function Card({
             <Image
               src={img}
               alt={header ?? "Image"}
-              className="ml-20 mb-20 rounded-2xl float-right w-96"
+              className="ml-20 mb-20 rounded-2xl float-right w-96 mobile:w-32"
             />
             <Text text={header ?? ""} type="Heading3" className="m-5" />
             <Text text={subheader ?? ""} type="Heading4" className="m-5" />
-            <div className="m-5 font-poppins text-md text-[#2F4156]">
+            <div className="m-5 font-poppins text-md text-navy">
               {ReactHtmlParser(content ?? "")}
             </div>
           </div>

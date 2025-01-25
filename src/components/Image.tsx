@@ -18,7 +18,7 @@ function Image({
         <Text
           text={caption}
           type="Paragraph"
-          className="text-[#F5EFEB] w-full h-full absolute rounded-[20px] opacity-0 hover:bg-[#2F4156]/50 hover:opacity-100 flex items-center justify-center transition-all duration-300 ease-in-out"
+          className="text-beige w-full h-full absolute rounded-[20px] opacity-0 hover:bg-navy/50 hover:opacity-100 flex items-center justify-center transition-all duration-300 ease-in-out"
         />
       )}
       <img src={src} alt={alt} className="rounded-[20px]" />

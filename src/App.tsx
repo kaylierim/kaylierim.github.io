@@ -8,7 +8,7 @@ import Footer from "@components/Footer";
 function App() {
   return (
     <div>
-      <Navbar className="pt-10 px-10" />
+      <Navbar className="pt-10 px-10 mobile:px-4" />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/library" element={<Library />} />

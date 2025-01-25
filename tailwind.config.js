@@ -9,7 +9,20 @@ export default {
       'vanilla-ravioli': ['Vanilla Ravioli', 'serif'],
       'poppins': ['Poppins', 'sans serif']
     },
-    extend: {},
+    screens: {
+      desktop: { min: "1280px" },
+      laptop: { max: "1279px" },
+      tablet: { max: "1023px" },
+      mobile: { max: "767px" },
+    },
+    extend: {
+    colors: {
+      navy: "#2F4156",
+      teal: "#567C8D",
+      "sky-blue": "#C8D9E6",
+      beige: "#F5EFEB"
+    },
+    },
   },
   plugins: [],
 }
