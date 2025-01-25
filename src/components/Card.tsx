@@ -36,13 +36,13 @@ function Card({
     <>
       <div
         className={twMerge(
-          "flex items-center relative rounded-[20px] p-5 h-[300px] bg-white shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ease-in-out",
+          "flex items-center relative rounded-[20px] p-4 h-[300px] bg-white shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ease-in-out",
           className
         )}
         id={id}
         onClick={handleClick}
       >
-        <img src={img} className="h-[260px] rounded-2xl" alt={header} />
+        <img src={img} className="h-full rounded-2xl" alt={header} />
 
         <div>
           {headerFirst && (
@@ -53,7 +53,7 @@ function Card({
             <Text text={header ?? ""} type="Heading3" className="m-5" />
           )}
 
-          <div className="m-5 line-clamp-3 font-poppins text-xl text-[#2F4156]">
+          <div className="m-5 line-clamp-3 font-poppins text-md text-[#2F4156]">
             {ReactHtmlParser(content ?? "")}
           </div>
         </div>
@@ -78,7 +78,7 @@ function Card({
             />
             <Text text={header ?? ""} type="Heading3" className="m-5" />
             <Text text={subheader ?? ""} type="Heading4" className="m-5" />
-            <div className="m-5 font-poppins text-xl text-[#2F4156]">
+            <div className="m-5 font-poppins text-md text-[#2F4156]">
               {ReactHtmlParser(content ?? "")}
             </div>
           </div>

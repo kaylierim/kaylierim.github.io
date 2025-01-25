@@ -7,7 +7,7 @@ import Text from "./Text";
 
 function Footer() {
   return (
-    <div className="bg-[#2F4156] mt-auto w-full h-20 rounded-t-[20px] flex items-center justify-between p-5">
+    <div className="bg-[#2F4156] mt-auto w-full h-16 rounded-t-[20px] flex items-center justify-between p-4">
       <div className="flex gap-5">
         <a
           href="mailto:rim.k@northeastern.edu"

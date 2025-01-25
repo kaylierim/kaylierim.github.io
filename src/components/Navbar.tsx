@@ -4,7 +4,7 @@ import Text from "./Text";
 
 function Navbar({ className }: { className?: string }) {
   return (
-    <div className={twMerge("flex justify-between mb-28", className)}>
+    <div className={twMerge("flex justify-between mb-14", className)}>
       <Link to="/">
         <Text text="Kaylie Rim" type="Heading3" />
       </Link>

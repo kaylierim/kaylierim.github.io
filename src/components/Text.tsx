@@ -2,11 +2,11 @@ import { twMerge } from "tailwind-merge";
 
 export const Type = {
   Custom: "",
-  Heading1: "font-vanilla-ravioli text-7xl",
-  Heading2: "font-vanilla-ravioli text-6xl",
-  Heading3: "font-vanilla-ravioli text-4xl",
-  Heading4: "font-vanilla-ravioli text-2xl",
-  Paragraph: "font-poppins text-xl",
+  Heading1: "font-vanilla-ravioli text-5xl",
+  Heading2: "font-vanilla-ravioli text-4xl",
+  Heading3: "font-vanilla-ravioli text-2xl",
+  Heading4: "font-vanilla-ravioli text-lg",
+  Paragraph: "font-poppins text-md",
 } as const;
 
 function Text({

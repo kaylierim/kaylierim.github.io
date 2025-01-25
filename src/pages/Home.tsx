@@ -59,7 +59,7 @@ function Home() {
         </div>
         <div className="border-solid border-y-0 border-r-0 border-gray-300 border-4 pl-20">
           <Text text="Skills" type="Heading2" />
-          <div className="flex gap-10 font-poppins text-xl text-[#2F4156]">
+          <div className="flex gap-10 font-poppins text-md text-[#2F4156]">
             <ul className="list-disc">
               <li>Typescript</li>
               <li>HTML</li>
@@ -163,7 +163,7 @@ function Home() {
               pattern, Java Swing GUI, and MVC framework following SOLID
               principles, tested with JUnit."
           headerFirst={false}
-          className="w-[1200px] mb-5"
+          className="w-[1000px] mb-5 h-[250px]"
         />
         <Card
           img={solitaireGame}
@@ -173,7 +173,7 @@ function Home() {
               user-friendly text commands, and adhered to SOLID principles
               using MVC, tested with JUnit."
           headerFirst={false}
-          className="w-[1200px]"
+          className="w-[1000px] h-[250px]"
         />
       </div>
       <Text
