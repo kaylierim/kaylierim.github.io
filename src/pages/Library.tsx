@@ -1,71 +1,23 @@
-import reviews from "../../reviews";
-import axios from "axios";
-import { useState, useEffect } from "react";
-import Card from "../components/Card";
+import FilterButton from "@components/FilterButton";
+import reviews from "../data/reviews";
+import Card from "@components/Card";
 import Text from "@components/Text";
+import { useBookData } from "../hooks/useBookData";
+import { useState } from "react";
+import { Genre, genres } from "../utils/constants";
 
 function Library() {
-  const [bookData, setBookData] = useState<
-    {
-      olid: string;
-      title: string;
-      author: string;
-      coverUrl: string;
-      content: string;
-    }[]
-  >([]);
-
-  useEffect(() => {
-    const fetchBookData = async () => {
-      const promises = reviews.map(async (review) => {
-        try {
-          const olid = review.olid;
-          const content = review.content;
-          const response = await axios.get(
-            `https://openlibrary.org/books/${olid}.json`
-          );
-
-          const bookInfo = response.data;
-          const title = bookInfo.title;
-          const authorKey = bookInfo.authors?.[0]?.key;
-          let authorName = "Unknown Author";
-          if (authorKey) {
-            const authorResponse = await axios.get(
-              `https://openlibrary.org${authorKey}.json`
-            );
-            authorName = authorResponse.data.name;
-          }
-          return {
-            title,
-            author: authorName,
-            coverUrl: `https://covers.openlibrary.org/b/olid/${olid}-M.jpg`,
-            olid,
-            content,
-          };
-        } catch (error) {
-          console.error("Error fetching book data:", error);
-          return null;
-        }
-      });
-
-      const results = (await Promise.all(promises)).filter(
-        (book) => book !== null
-      );
-
-      setBookData(results);
-    };
-
-    fetchBookData();
-  }, []);
+  const [selectedGenres, setSelectedGenres] = useState<Genre[]>([]);
+  const { bookData, isLoading } = useBookData(reviews);
 
   return (
-    <div className="px-28 mb-28">
+    <div className="px-28 mb-28 tablet:px-20 mobile:px-4">
       <Text
         text="⋆｡°✩ Kaylie's Library ⋆｡°✩"
         type="Heading1"
         className="flex justify-center"
       />
-      <div className="flex justify-center p-4 gap-5 px-32">
+      <div className="flex justify-center p-4 gap-5 px-32 tablet:px-0">
         <Text
           text="I have been an avid reader since junior year of high school. In 2023,
           I read 50 books and this year, my goal is 40 books. I read nonfiction,
@@ -79,21 +31,38 @@ function Library() {
           type="Paragraph"
         />
       </div>
-
+      <div className="flex gap-4">
+        <Text text="Filter genre:" type="Heading2" />
+        {genres.map((genre, idx) => (
+          <FilterButton
+            key={`filter-${idx}`}
+            genre={genre}
+            selectedGenre={selectedGenres}
+            setGenre={setSelectedGenres}
+          />
+        ))}
+      </div>
       <div className="py-10">
-        {bookData.map((book, index) => {
-          return (
-            <Card
-              key={index}
-              id={book.olid}
-              header={book.title}
-              subheader={book.author}
-              content={book.content}
-              img={book.coverUrl}
-              className="mb-5"
-            />
-          );
-        })}
+        {bookData
+          .filter((book) =>
+            selectedGenres.length === 0
+              ? book
+              : selectedGenres.includes(book.genre)
+          )
+          .map((book, index) => {
+            return (
+              <Card
+                key={index}
+                id={book.olid}
+                header={book.title}
+                subheader={book.author}
+                content={book.content}
+                img={book.coverUrl}
+                className="mb-5"
+                isLoading={isLoading}
+              />
+            );
+          })}
       </div>
     </div>
   );
