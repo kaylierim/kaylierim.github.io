@@ -47,7 +47,7 @@ function Card({
         {isLoading ? (
           <div className="h-96 w-96 rounded-2xl bg-slate-500 animate-pulse" />
         ) : (
-          <img src={img} className="h-full rounded-2xl" alt={header} />
+          <img src={img} className="w-[160px] rounded-2xl" alt={header} />
         )}
 
         <div>

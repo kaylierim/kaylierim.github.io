@@ -27,7 +27,7 @@
       "@components/*": ["./src/components/*"],
       "@assets/*": ["./src/assets/*"],
       "@icons/*": ["./src/assets/icons/*"],
-      "@images/*": ["./src/assets/images/*"]
+      "@media/*": ["./src/assets/media/*"]
     }
   },
   "include": ["src"]

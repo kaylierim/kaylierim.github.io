@@ -1,9 +1,11 @@
-import profilePhoto from "@images/profilephoto.png";
-import globaleurEngineeringTeam from "@images/globaleurengineeringteam.jpg";
-import globaleurManager from "@images/globaleurmanager.jpg";
-import hallasan from "@images/hallasan.jpg";
-import reversiGame from "@images/ReversiGame.png";
-import solitaireGame from "@images/SolitaireGame.png";
+import profilePhoto from "@media/profilephoto.png";
+import globaleurEngineeringTeam from "@media/globaleurengineeringteam.jpg";
+import globaleurManager from "@media/globaleurmanager.jpg";
+import hallasan from "@media/hallasan.jpg";
+import reversiGame from "@media/ReversiGame.png";
+import solitaireGame from "@media/SolitaireGame.png";
+import webPortfolio2024 from "@media/webPortfolio2024.png";
+import galleryModalDemo from "@media/galleryModalDemo.mp4";
 import resume from "@assets/Kaylie's Resume 2025.pdf";
 import Text from "@components/Text";
 import EMAIL from "@icons/email.svg";
@@ -71,7 +73,7 @@ function Home() {
         <div className="pr-10">
           <Text text="About Me" type="Heading2" />
           <Text
-            text="I am actively searching for a Fall 2025 internship in the software field. I have been a front-end engineer co-op and a teaching assistant for Fundamentals of Computer Science 2. My diverse experience also includes being a teaching assistant, a waitress, a cashier, and a tutor."
+            text="I am an incoming Front-End Engineer Intern at Amazon. I have been a front-end engineer co-op and a teaching assistant for Fundamentals of Computer Science 2. My diverse experience also includes being a teaching assistant, a waitress, a cashier, and a tutor."
             type="Paragraph"
             className="w-96 tablet:w-[600px] mobile:w-full"
           />
@@ -178,9 +180,18 @@ function Home() {
             />
           </div>
         </div>
+        <video src={galleryModalDemo} controls className="rounded-[20px]" />
       </div>
       <div className="tablet:px-4">
         <Text text="My Projects" type="Heading2" className="flex mb-5" />
+        <Card
+          img={webPortfolio2024}
+          header="2024 Web Portfolio"
+          subheader="Personal project"
+          content="First website portfolio made using all concepts learned from a Front End Udemy Bootcamp course."
+          headerFirst={false}
+          className="w-[1000px] mb-5 h-[250px] tablet:w-full"
+        />
         <Card
           img={reversiGame}
           header="Reversi Game"
@@ -202,10 +213,6 @@ function Home() {
           className="w-[1000px] h-[250px] tablet:w-full"
         />
       </div>
-      <Text
-        text="**Currently making the website responsive!!**"
-        type="Paragraph"
-      />
     </div>
   );
 }
