@@ -13,7 +13,6 @@ function Card({
   subheader,
   content,
   headerFirst,
-  isLoading,
 }: {
   img: string;
   id?: string;
@@ -22,9 +21,9 @@ function Card({
   subheader?: string;
   content?: string;
   headerFirst?: boolean;
-  isLoading?: boolean;
 }) {
   const [modalOpen, setModalOpen] = useState(false);
+  const [isImageLoading, setIsImageLoading] = useState(true);
 
   function handleClick() {
     setModalOpen(!modalOpen);
@@ -44,11 +43,16 @@ function Card({
         id={id}
         onClick={handleClick}
       >
-        {isLoading ? (
-          <div className="h-96 w-96 rounded-2xl bg-slate-500 animate-pulse" />
-        ) : (
-          <img src={img} className="w-[160px] rounded-2xl" alt={header} />
-        )}
+        <img
+          src={img}
+          className={
+            isImageLoading
+              ? "h-full w-72 rounded-2xl bg-slate-500/50 animate-pulse"
+              : "w-[160px] rounded-2xl"
+          }
+          alt={header}
+          onLoad={() => setIsImageLoading(false)}
+        />
 
         <div>
           {headerFirst && (

@@ -18,6 +18,5 @@ export const useBookData = (reviews: Review[]) => {
   const bookData = bookQueries
     .map((query) => query.data)
     .filter((book) => book !== undefined);
-  const isLoading = bookQueries.some((query) => query.isLoading);
-  return { bookData, isLoading };
+  return { bookData };
 };

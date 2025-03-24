@@ -8,7 +8,7 @@ import { Genre, genres } from "../utils/constants";
 
 function Library() {
   const [selectedGenres, setSelectedGenres] = useState<Genre[]>([]);
-  const { bookData, isLoading } = useBookData(reviews);
+  const { bookData } = useBookData(reviews);
 
   return (
     <div className="px-28 mb-28 tablet:px-20 mobile:px-4">
@@ -59,7 +59,6 @@ function Library() {
                 content={book.content}
                 img={book.coverUrl}
                 className="mb-5"
-                isLoading={isLoading}
               />
             );
           })}
