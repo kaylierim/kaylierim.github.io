@@ -58,12 +58,12 @@ function Card({
           {headerFirst && (
             <Text text={header ?? ""} type="Heading3" className="m-5" />
           )}
-          <Text text={subheader ?? ""} type="Heading4" className="m-5" />
+          <Text text={subheader ?? ""} type="Heading4" className="mx-5 my-2" />
           {!headerFirst && (
-            <Text text={header ?? ""} type="Heading3" className="m-5" />
+            <Text text={header ?? ""} type="Heading3" className="mx-5" />
           )}
 
-          <div className="m-5 line-clamp-3 font-poppins text-md text-navy">
+          <div className="mx-5 line-clamp-3 font-poppins text-base text-navy">
             {ReactHtmlParser(content ?? "")}
           </div>
         </div>
@@ -75,7 +75,7 @@ function Card({
           onClick={handleClose}
         >
           <div
-            className="bg-white max-w-[70%] max-h-[80%] p-8 rounded-[20px] z-20 overflow-auto mobile:p-4"
+            className="bg-white max-w-[65%] max-h-[80%] p-8 rounded-[20px] z-20 overflow-auto mobile:p-4 shadow-lg"
             onClick={(e) => e.stopPropagation()}
           >
             <img
@@ -84,14 +84,22 @@ function Card({
               alt="close"
               onClick={handleClose}
             />
-            <Image
-              src={img}
-              alt={header ?? "Image"}
-              className="ml-20 mb-20 rounded-2xl float-right w-96 mobile:w-32"
-            />
-            <Text text={header ?? ""} type="Heading3" className="m-5" />
-            <Text text={subheader ?? ""} type="Heading4" className="m-5" />
-            <div className="m-5 font-poppins text-md text-navy">
+            <div className="flex justify-center my-12">
+              <Image
+                src={img}
+                alt={header ?? "Image"}
+                className="rounded-2xl max-w-48 mobile:w-32 shadow-md"
+              />
+              <div className="flex flex-col justify-center">
+                <Text
+                  text={header ?? ""}
+                  type="Heading2"
+                  className="ml-5 mb-2"
+                />
+                <Text text={subheader ?? ""} type="Heading3" className="ml-5" />
+              </div>
+            </div>
+            <div className="font-poppins text-base text-navy">
               {ReactHtmlParser(content ?? "")}
             </div>
           </div>

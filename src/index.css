@@ -13,4 +13,22 @@
     font-weight: 400;
     src: url("./assets/fonts/poppins.regular.ttf");
   }
+  h1 {
+    @apply font-vanilla-ravioli text-5xl text-navy;
+  }
+  h2 {
+    @apply font-vanilla-ravioli text-4xl text-navy;
+  }
+  h3 {
+    @apply font-vanilla-ravioli text-2xl text-navy my-3;
+  }
+  h4 {
+    @apply font-vanilla-ravioli text-lg text-navy;
+  }
+  p {
+    @apply font-poppins text-base text-navy my-4;
+  }
+  li {
+    @apply font-poppins text-base text-navy list-disc ml-8;
+  }
 }
