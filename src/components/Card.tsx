@@ -51,7 +51,7 @@ function Card({
         </div>
       );
     }
-    return <Text text={header ?? ""} type="Heading3" className="m-5" />;
+    return <Text text={header ?? ""} type="Heading3" className="ml-5" />;
   };
 
   return (
@@ -78,10 +78,10 @@ function Card({
 
         <div>
           {headerFirst && getHeader()}
-          <Text text={subheader ?? ""} type="Heading4" className="mx-5 my-2" />
+          <Text text={subheader ?? ""} type="Heading4" className="ml-5 my-0" />
           {!headerFirst && getHeader()}
 
-          <div className="mx-5 line-clamp-3 font-poppins text-base text-navy">
+          <div className="ml-5 line-clamp-3 font-poppins text-base text-navy">
             {ReactHtmlParser(content ?? "")}
           </div>
         </div>

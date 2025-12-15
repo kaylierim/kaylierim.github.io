@@ -59,6 +59,7 @@ function Library() {
                 content={book.content}
                 img={book.coverUrl}
                 className="mb-5"
+                headerFirst
               />
             );
           })}
