@@ -2,7 +2,7 @@ import EMAIL from "@icons/email.svg";
 import GITHUB from "@icons/github.svg";
 import LINKED_IN from "@icons/linkedin.svg";
 import RESUME from "@icons/resume.svg";
-import resume from "@assets/Kaylie's Resume 2025.pdf";
+import resume from "@assets/kaylie-rim-resume.pdf";
 import Text from "./Text";
 
 function Footer() {

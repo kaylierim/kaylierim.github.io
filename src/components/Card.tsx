@@ -4,6 +4,7 @@ import x from "@icons/x.svg";
 import Text from "./Text";
 import Image from "./Image";
 import { twMerge } from "tailwind-merge";
+import LINK from "@icons/link.svg";
 
 function Card({
   img,
@@ -13,6 +14,8 @@ function Card({
   subheader,
   content,
   headerFirst,
+  link,
+  hasModal = true,
 }: {
   img: string;
   id?: string;
@@ -21,23 +24,42 @@ function Card({
   subheader?: string;
   content?: string;
   headerFirst?: boolean;
+  link?: string;
+  hasModal?: boolean;
 }) {
   const [modalOpen, setModalOpen] = useState(false);
   const [isImageLoading, setIsImageLoading] = useState(true);
 
   function handleClick() {
-    setModalOpen(!modalOpen);
+    if (hasModal) {
+      setModalOpen(!modalOpen);
+    }
   }
 
   function handleClose() {
     setModalOpen(false);
   }
 
+  const getHeader = () => {
+    if (link) {
+      return (
+        <div className="flex items-center gap-3 ml-5">
+          <Text text={header ?? ""} type="Heading3" className="" />
+          <a href={link} target="_blank">
+            <img src={LINK} className="w-4" />
+          </a>
+        </div>
+      );
+    }
+    return <Text text={header ?? ""} type="Heading3" className="m-5" />;
+  };
+
   return (
     <>
       <div
         className={twMerge(
-          "flex items-center relative rounded-[20px] p-4 h-[300px] bg-white shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ease-in-out",
+          "flex items-center relative rounded-[20px] p-4 h-[300px] bg-white shadow-md transition-all duration-300 ease-in-out",
+          hasModal && "hover:shadow-lg hover:-translate-y-1 cursor-pointer",
           className
         )}
         id={id}
@@ -55,13 +77,9 @@ function Card({
         />
 
         <div>
-          {headerFirst && (
-            <Text text={header ?? ""} type="Heading3" className="m-5" />
-          )}
+          {headerFirst && getHeader()}
           <Text text={subheader ?? ""} type="Heading4" className="mx-5 my-2" />
-          {!headerFirst && (
-            <Text text={header ?? ""} type="Heading3" className="mx-5" />
-          )}
+          {!headerFirst && getHeader()}
 
           <div className="mx-5 line-clamp-3 font-poppins text-base text-navy">
             {ReactHtmlParser(content ?? "")}
@@ -69,7 +87,7 @@ function Card({
         </div>
       </div>
 
-      {modalOpen && (
+      {hasModal && modalOpen && (
         <div
           className="fixed left-0 top-0 w-full h-full flex items-center justify-center bg-black/25 z-10"
           onClick={handleClose}
